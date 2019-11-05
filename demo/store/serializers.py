@@ -7,4 +7,5 @@ class ProductSerializer(serializers.ModelSerializer):
         fields = ('id', 'name', 'description', 'price', 'sale_start', 'sale_end')
 
     def to_representation(self, instance):
-        date = super().to_representation(instance)
+        data = super().to_representation(instance)
+        data['is_on_sale'] = instance.is_on_sale()
