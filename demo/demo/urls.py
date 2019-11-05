@@ -22,4 +22,3 @@ urlpatterns = [
     path('cart/', store.views.cart, name='shopping-cart'),
     path('', store.views.index, name='list-products'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
-]
