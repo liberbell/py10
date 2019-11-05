@@ -1,0 +1,15 @@
+{% extends "base.html" %} {% block title %}Shopping Cart{% endblock %} {% block content %}
+Shopping Cart
+Items
+{% for item in items %}
+{{ item.quantity }}x {{ item.name }}
+{% endfor %}
+Subtotal
+${{ subtotal|floatformat:2 }}
+Shipping
+Free
+Taxes ({{ tax_rate }}%)
+${{ tax_total|floatformat:2 }}
+Total
+${{ total|floatformat:2 }}
+{% endblock %} 
