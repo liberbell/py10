@@ -22,3 +22,4 @@ class ProductList(ListAPIView):
                 sale_start__lte=now,
                 sale_end__gte=now,
             )
+        return queryset
