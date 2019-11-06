@@ -9,3 +9,9 @@ class ProductList(ListAPIView):
     serializer_class = ProductSerializer
     filter_backends = (DjangoFilterBackend,)
     filter_fields = ('id',)
+
+    def get_queryset(self):
+        on_sale = self.request.query_params_get('on_sale', None)
+        if on_sale is None:
+            return super().get_queryset()
+        queryset = Product.objects.all()
