@@ -21,7 +21,7 @@ import store.views
 import store.api_views
 
 urlpatterns = [
-    path('api/vi/products/', store.api_views.ProductList.as_view()),
+    path('api/v1/products/', store.api_views.ProductList.as_view()),
     path('admin/', admin.site.urls),
     path('products/<int:id>/', store.views.show, name='show-product'),
     path('cart/', store.views.cart, name='shopping-cart'),
