@@ -7,5 +7,5 @@ from store.models import Product
 class ProductList(ListAPIView):
     queryset = Product.objects.all()
     serializer_class = ProductSerializer
-    filter_backend = (DjangoFilterBackend,)
+    filter_backends = (DjangoFilterBackend,)
     filter_fields = ('id',)
