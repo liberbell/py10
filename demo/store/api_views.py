@@ -10,7 +10,7 @@ class ProductList(ListAPIView):
     serializer_class = ProductSerializer
     filter_backends = (DjangoFilterBackend,)
     filter_fields = ('id',)
-    filter_fields = ('name', 'description')
+    search_fields = ('name', 'description')
 
     def get_queryset(self):
         on_sale = self.request.query_params.get('on_sale', None)
