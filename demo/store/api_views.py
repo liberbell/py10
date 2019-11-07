@@ -9,13 +9,14 @@ from store.models import Product
 class ProductsPagination(LimitOffsetPagination):
     default_limit = 10
     max_limit = 100
-    
+
 class ProductList(ListAPIView):
     queryset = Product.objects.all()
     serializer_class = ProductSerializer
     filter_backends = (DjangoFilterBackend, SearchFilter)
     filter_fields = ('id',)
     search_fields = ('name', 'description')
+    pagination_class = ProductsPagination
 
     def get_queryset(self):
         on_sale = self.request.query_params.get('on_sale', None)
