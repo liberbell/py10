@@ -41,3 +41,5 @@ class ProductCreate(CreateAPIView):
             price = request.data.get('price')
             if price is not None and float(price) <= 0.0:
                 raise ValidationError({ 'price': 'Must be above $0.00' })
+        except ValueError:
+            raise ValidationError({ 'price': 'A Valid number is required' })
