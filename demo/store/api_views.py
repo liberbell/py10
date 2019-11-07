@@ -32,3 +32,6 @@ class ProductList(ListAPIView):
                 sale_end__gte=now,
             )
         return queryset
+
+class ProductCreate(CreateAPIView):
+    serializer_class = ProductSerializer
