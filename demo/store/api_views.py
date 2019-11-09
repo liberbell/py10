@@ -43,3 +43,4 @@ class ProductCreate(CreateAPIView):
                 raise ValidationError({ 'price': 'Must be above $0.00' })
         except ValueError:
             raise ValidationError({ 'price': 'A Valid number is required' })
+        return super().create(request, *args, **kwargs)
