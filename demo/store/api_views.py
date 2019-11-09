@@ -47,10 +47,10 @@ class ProductCreate(CreateAPIView):
 
 class ProductDestroy(DestroyAPIView):
     queryset = Product.objects.all()
-    lookup_fields = 'id'
+    lookup_field = 'id'
 
     def delete(self, request, *args, **kwargs):
-        Product_id = request.data.get('id')
+        product_id = request.data.get('id')
         response = super().delete(request, *args, **kwargs)
         if response.status_code == 204:
             from django.core.cache import cache
