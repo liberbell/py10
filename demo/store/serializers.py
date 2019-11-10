@@ -19,6 +19,9 @@ class ProductSerializer(serializers.ModelSerializer):
     sales_start = serializers.DateTimeField(input_formats=['%I:%M %p %d %B %Y'], format=None, allow_null=True,
                                                             help_text='Accepted format is "12:00 PM 16 April 2019"',
                                                             style={'input_type': 'text', 'place_holder': '12:01 PM 28 July 2019'})
+    sales_end = serializers.DateTimeField(input_formats=['%I:%M %p %d %B %Y'], format=None, allow_null=True,
+                                                            help_text='Accepted format is "12:00 PM 16 April 2019"',
+                                                            style={'input_type': 'text', 'place_holder': '12:01 PM 28 July 2019'})
 
 
     class Meta:
