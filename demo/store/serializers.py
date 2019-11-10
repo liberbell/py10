@@ -2,6 +2,7 @@ from rest_framework import serializers
 from store.models import Product, ShoppingCartItem
 
 class CartItemSerializer(serializers.ModelSerializer):
+    quantity = serializers.IntegerField(min_value=1, max_value=100)
     class Meta:
         model = ShoppingCartItem
         fields = ('product', 'quantity')
