@@ -69,3 +69,9 @@ class ProductRetriveUpdateDestroy(RetrieveUpdateDestroyAPIView):
             from django.core.cache import cache
             cache.delete('product_data_{}'.format(product_id))
         return response
+
+    def update(self, request, *args, **kwargs):
+        response = super().update(request, *args, **kwargs)
+        if response.status_code == 200:
+            from django.core.cache import cache
+            Product = response.data
