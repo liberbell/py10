@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from store.models import Product
+from store.models import Product, ShoppingCartItem
 
 class CartItemSerializer(serializers.ModelSerializer):
     class Meta:
