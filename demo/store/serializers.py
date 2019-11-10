@@ -14,7 +14,7 @@ class ProductSerializer(serializers.ModelSerializer):
     cart_items = serializers.SerializerMethodField()
     # price = serializers.DecimalField(min_value=1.00, max_value=100000)
     price = serializers.DecimalField(min_value=1.00, max_value=100000,
-            max_digits=None, dicimal_places=2,
+            max_digits=None, decimal_places=2,
             )
 
 
