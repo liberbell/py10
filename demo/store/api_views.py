@@ -60,6 +60,7 @@ class ProductCreate(CreateAPIView):
 class ProductRetriveUpdateDestroy(RetrieveUpdateDestroyAPIView):
     queryset = Product.objects.all()
     lookup_field = 'id'
+    serializer_class = ProductSerializer
 
     def delete(self, request, *args, **kwargs):
         product_id = request.data.get('id')
