@@ -57,7 +57,7 @@ class ProductCreate(CreateAPIView):
 #             cache.delete('product_data_{}'.format(product_id))
 #         return response
 
-class ProductRetriveUpdateDestroy(RetrieveUpdateDestroyAPIView):
+class ProductRetrieveUpdateDestroy(RetrieveUpdateDestroyAPIView):
     queryset = Product.objects.all()
     lookup_field = 'id'
     serializer_class = ProductSerializer
