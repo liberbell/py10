@@ -12,6 +12,7 @@ class ProductSerializer(serializers.ModelSerializer):
     current_price = serializers.FloatField(read_only=True)
     description = serializers.CharField(min_length=2, max_length=200)
     cart_items = serializers.SerializerMethodField()
+    price = serializers.FloatField(min_value=1.00, max_value=100000)
 
     class Meta:
         model = Product
