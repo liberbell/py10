@@ -23,7 +23,6 @@ class ProductSerializer(serializers.ModelSerializer):
                                                             help_text='Accepted format is "12:00 PM 16 April 2019"',
                                                             style={'input_type': 'text', 'place_holder': '12:01 PM 28 July 2019'})
 
-
     class Meta:
         model = Product
         fields = ('id', 'name', 'description', 'price', 'sale_start', 'sale_end',
