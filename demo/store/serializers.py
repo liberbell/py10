@@ -42,6 +42,6 @@ class ProductSerializer(serializers.ModelSerializer):
 class ProductStatSerializer(serializers.Serializer):
     stats = serializers.DictField(
             child=serializers.ListField(
-            child=IntegerField(),
+            child=serializers.IntegerField(),
             )
         )
