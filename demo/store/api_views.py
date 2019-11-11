@@ -5,7 +5,7 @@ from rest_framework.filters import SearchFilter
 from rest_framework.pagination import LimitOffsetPagination
 from rest_framework.response import Response
 
-from store.serializers import ProductSerializer
+from store.serializers import ProductSerializer, ProductStatSerializer
 from store.models import Product
 
 class ProductsPagination(LimitOffsetPagination):
