@@ -82,3 +82,11 @@ class ProductRetrieveUpdateDestroy(RetrieveUpdateDestroyAPIView):
             'price': product['price'],
             })
         return response
+
+class ProductStats(GenericAPIView):
+    lookup_field = 'id'
+    serializer_class = ProductStatSerializer
+    queryset = Product.objects.all()
+
+    def get(self, request, format=None, id=None):
+        obj = self.get_object()
