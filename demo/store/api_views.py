@@ -90,3 +90,10 @@ class ProductStats(GenericAPIView):
 
     def get(self, request, format=None, id=None):
         obj = self.get_object()
+        serializer = ProductStatSerializer({
+            'stats': {
+                '2019-01-01': [5, 10, 15],
+                '2019-11-12': [10, 15, 25],
+            }
+        })
+        return Response(serializer.data)
