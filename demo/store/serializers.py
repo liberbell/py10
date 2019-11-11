@@ -23,6 +23,7 @@ class ProductSerializer(serializers.ModelSerializer):
                                                             help_text='Accepted format is "12:00 PM 16 April 2019"',
                                                             style={'input_type': 'text', 'placeholder': '12:01 PM 28 July 2019'})
     photo = serializers.ImageField(default=None)
+    warranty = serializers.FileField(write_only=True, default=None)
 
     class Meta:
         model = Product
