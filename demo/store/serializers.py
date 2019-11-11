@@ -16,12 +16,12 @@ class ProductSerializer(serializers.ModelSerializer):
     price = serializers.DecimalField(min_value=1.00, max_value=100000,
             max_digits=None, decimal_places=2,
             )
-    sales_start = serializers.DateTimeField(input_formats=['%I:%M %p %d %B %Y'], format=None, allow_null=True,
+    sale_start = serializers.DateTimeField(input_formats=['%I:%M %p %d %B %Y'], format=None, allow_null=True,
                                                             help_text='Accepted format is "12:00 PM 16 April 2019"',
-                                                            style={'input_type': 'text', 'place_holder': '12:01 PM 28 July 2019'})
-    sales_end = serializers.DateTimeField(input_formats=['%I:%M %p %d %B %Y'], format=None, allow_null=True,
+                                                            style={'input_type': 'text', 'placeholder': '12:01 PM 28 July 2019'})
+    sale_end = serializers.DateTimeField(input_formats=['%I:%M %p %d %B %Y'], format=None, allow_null=True,
                                                             help_text='Accepted format is "12:00 PM 16 April 2019"',
-                                                            style={'input_type': 'text', 'place_holder': '12:01 PM 28 July 2019'})
+                                                            style={'input_type': 'text', 'placeholder': '12:01 PM 28 July 2019'})
 
     class Meta:
         model = Product
