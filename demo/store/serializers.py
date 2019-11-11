@@ -38,3 +38,6 @@ class ProductSerializer(serializers.ModelSerializer):
     #     data['is_on_sale'] = instance.is_on_sale()
     #     data['current_price'] = instance.current_price()
     #     return data
+
+class ProductStatSerializer(serializers.Serializer):
+    stats = serializers.DictField(child=serializers.ListField(child=IntegerField())
