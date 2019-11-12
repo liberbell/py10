@@ -35,6 +35,10 @@ class ProductSerializer(serializers.ModelSerializer):
         items = ShoppingCartItem.objects.filter(product=instance)
         return CartItemSerializer(items, many=True).data
 
+    def update(self, instance, validated_data):
+        if validated_data.get('warranty', None):
+            instance.description += '\n\nWarranty Information:\n' 
+
     # def to_representation(self, instance):
     #     data = super().to_representation(instance)
     #     data['is_on_sale'] = instance.is_on_sale()
