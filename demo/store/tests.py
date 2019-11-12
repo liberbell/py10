@@ -12,3 +12,5 @@ class ProductCreateTestCase(APITestCase):
             'price': '123,45',
         }
         response = self.client.post('api/v1/products/new', product_attrs)
+        if response.status_code != 201:
+            print(response.data)
