@@ -37,7 +37,11 @@ class ProductSerializer(serializers.ModelSerializer):
 
     def update(self, instance, validated_data):
         if validated_data.get('warranty', None):
-            instance.description += '\n\nWarranty Information:\n' 
+            instance.description += '\n\nWarranty Information:\n'
+            instance.description += b'; '.join(
+                validated_data['warranty'].readlines()
+            ).decode()
+        return instance
 
     # def to_representation(self, instance):
     #     data = super().to_representation(instance)
