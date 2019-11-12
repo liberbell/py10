@@ -15,4 +15,4 @@ class ProductCreateTestCase(APITestCase):
         if response.status_code != 201:
             print(response.data)
         self.assertEqual(Product.objects.count(), initial_product_count + 1)
-        for attrs,
+        for attrs, expected_value in product_attrs.items():
