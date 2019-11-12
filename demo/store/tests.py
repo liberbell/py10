@@ -11,3 +11,4 @@ class ProductCreateTestCase(APITestCase):
             'description': 'Awesome Product',
             'price': '123,45',
         }
+        response = self.client.post('api/v1/products/new', product_attrs)
