@@ -31,9 +31,9 @@ class ProductDestroyTestCase(APITestCase):
         self.client.delete('/api/v1/products/{}/'.format(product_id))
         self.assertEqual(
                         Product.objects.count(),
-                        initial_product_count - 1
+                        initial_product_count - 1,
                         )
         self.assertEqual(
                         Product.DoesNotExist,
-                        Product.objects.get, id=product_id
+                        Product.objects.get, id=product_id,
                         )
