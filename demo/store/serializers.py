@@ -47,6 +47,10 @@ class ProductSerializer(serializers.ModelSerializer):
             ).decode()
         return instance
 
+    def create(self, validated_data):
+        validated_data.pop('warranty')
+        return Product.objects.create(**validated_data)
+
     # def to_representation(self, instance):
     #     data = super().to_representation(instance)
     #     data['is_on_sale'] = instance.is_on_sale()
