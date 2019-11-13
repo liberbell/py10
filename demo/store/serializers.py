@@ -32,7 +32,7 @@ class ProductSerializer(serializers.ModelSerializer):
     class Meta:
         model = Product
         fields = ('id', 'name', 'description', 'price', 'sale_start', 'sale_end',
-        'is_on_sale', 'current_price', 'cart_items', 'photo', 'warranty'
+        'is_on_sale', 'current_price', 'cart_items', 'photo', 'warranty',
         )
 
     def get_cart_items(self, instance):
