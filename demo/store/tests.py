@@ -9,7 +9,7 @@ class ProductCreateTestCase(APITestCase):
         product_attrs = {
             'name': 'New Product',
             'description': 'Awesome Product',
-            'price': '123,45',
+            'price': '123.45',
         }
         response = self.client.post('api/v1/products/new', product_attrs)
         if response.status_code != 201:
