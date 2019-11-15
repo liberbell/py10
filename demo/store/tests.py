@@ -44,3 +44,5 @@ class ProductListTestCase(APITestCase):
         response = self.client.get('/api/v1/products/')
         self.assertIsNone(response.data['next'])
         self.assertIsNone(response.data['previous'])
+        self.assertEqual(response.data['count'], products_count)
+        
