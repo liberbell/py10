@@ -33,7 +33,7 @@ class ProductDestroyTestCase(APITestCase):
                         Product.objects.count(),
                         initial_product_count - 1,
                         )
-        self.assertEqual(
+        self.assertRaises(
                         Product.DoesNotExist,
                         Product.objects.get, id=product_id,
                         )
