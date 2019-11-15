@@ -46,3 +46,6 @@ class ProductListTestCase(APITestCase):
         self.assertIsNone(response.data['previous'])
         self.assertEqual(response.data['count'], products_count)
         self.assertEqual(len(response.data['results']), products_count)
+
+class ProductUpdateTestCase(APITestCase):
+    def 
