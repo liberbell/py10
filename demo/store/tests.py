@@ -39,4 +39,7 @@ class ProductDestroyTestCase(APITestCase):
                         )
 
 class ProductListTestCase(APITestCase):
-    def test_list_products():
+    def test_list_products(self):
+        products_count = Product.objects.count()
+        response = self.client.get('/api/v1/products/')
+        self.assertIsNone(response.data['next'])
