@@ -37,3 +37,6 @@ class ProductDestroyTestCase(APITestCase):
                         Product.DoesNotExist,
                         Product.objects.get, id=product_id,
                         )
+
+class ProductListTestCase(APITestCase):
+    def test_list_products():
