@@ -57,4 +57,6 @@ class ProductUpdateTestCase(APITestCase):
                 'description': 'Awaesome Product',
                 'price': 123.45,
             }
+            format = 'json',
         }
+        updated = Product.objects.get()
