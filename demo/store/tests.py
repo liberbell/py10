@@ -53,11 +53,11 @@ class ProductUpdateTestCase(APITestCase):
         response = self.client.patch(
             '/api/v1/products/{}/'.format(product.id),
             {
-                'name':'New Product',
+                'name': 'New Product',
                 'description': 'Awaesome Product',
                 'price': 123.45,
             },
-            format = 'json',
+            format='json',
         )
         updated = Product.objects.get(id=product.id)
         self.assertEqual(updated.name, 'New Product')
