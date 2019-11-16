@@ -1,6 +1,8 @@
 from django.test import TestCase
 from rest_framework.test import APITestCase
 from store.models import Product
+import os.path
+from django.conf import settings
 
 # Create your tests here.
 class ProductCreateTestCase(APITestCase):
@@ -61,3 +63,6 @@ class ProductUpdateTestCase(APITestCase):
         )
         updated = Product.objects.get(id=product.id)
         self.assertEqual(updated.name, 'New Product')
+
+    def test_upload_product_photo(self):
+        product = Product.objects.first()
