@@ -59,4 +59,4 @@ class ProductUpdateTestCase(APITestCase):
             }
             format = 'json',
         }
-        updated = Product.objects.get()
+        updated = Product.objects.get(id=product.id)
