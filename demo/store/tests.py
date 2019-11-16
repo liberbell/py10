@@ -55,6 +55,6 @@ class ProductUpdateTestCase(APITestCase):
             {
                 'name':'New Product',
                 'description': 'Awaesome Product',
-                'price': 123.45
+                'price': 123.45,
             }
         }
