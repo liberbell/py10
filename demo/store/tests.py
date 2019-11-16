@@ -60,3 +60,4 @@ class ProductUpdateTestCase(APITestCase):
             format = 'json',
         }
         updated = Product.objects.get(id=product.id)
+        self.assertEqual(updated.name, 'New Product')
