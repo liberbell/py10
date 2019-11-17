@@ -85,3 +85,5 @@ class ProductUpdateTestCase(APITestCase):
             self.assertTrue(
                 updated.photo.path.startswith(expected_photo)
             )
+        finally:
+            os.remove(updated.photo.path)
