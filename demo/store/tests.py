@@ -75,3 +75,5 @@ class ProductUpdateTestCase(APITestCase):
             { 'photo': photo_data },
             format = 'multipart',
             )
+        self.assertEqual(response.status_code, 200)
+        self.assertNotEqual(response.data['photo'], original_photo)
