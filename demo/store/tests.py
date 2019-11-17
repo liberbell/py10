@@ -68,5 +68,7 @@ class ProductUpdateTestCase(APITestCase):
         product = Product.objects.first()
         original_photo = product.photo
         photo_path = os.path.join(
-            settings.MEDIA_ROOT, 'products', ''
+            settings.MEDIA_ROOT, 'products', 'vitamin-iron.jpg',
         )
+        with open(photo_path, 'rb') as photo_data:
+            response = self.client.patch('/api/v1/products/')
