@@ -79,3 +79,9 @@ class ProductUpdateTestCase(APITestCase):
         self.assertNotEqual(response.data['photo'], original_photo)
         try:
             updated = Product.objects.get(id=product.id)
+            expected_photo = os.path.join(
+                settings.MEDIA_ROOT, 'products', 'vitamin-iron',
+            )
+            self.assertTrue(
+                updated.photo.path.startswith(expected_photo)
+            )
