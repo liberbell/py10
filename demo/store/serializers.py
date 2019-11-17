@@ -51,11 +51,11 @@ class ProductSerializer(serializers.ModelSerializer):
         validated_data.pop('warranty')
         return Product.objects.create(**validated_data)
 
-    # def to_representation(self, instance):
-    #     data = super().to_representation(instance)
-    #     data['is_on_sale'] = instance.is_on_sale()
-    #     data['current_price'] = instance.current_price()
-    #     return data
+    def to_representation(self, instance):
+        data = super().to_representation(instance)
+        data['is_on_sale'] = instance.is_on_sale()
+        data['current_price'] = instance.current_price()
+        return data
 
 class ProductStatSerializer(serializers.Serializer):
     stats = serializers.DictField(
