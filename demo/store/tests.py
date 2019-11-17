@@ -67,3 +67,6 @@ class ProductUpdateTestCase(APITestCase):
     def test_upload_product_photo(self):
         product = Product.objects.first()
         original_photo = product.photo
+        photo_path = os.path.join(
+            settings.MEDIA_ROOT, 'products', ''
+        )
