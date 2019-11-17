@@ -73,4 +73,5 @@ class ProductUpdateTestCase(APITestCase):
         with open(photo_path, 'rb') as photo_data:
             response = self.client.patch('/api/v1/products/{}/'.format(product.id),
             { 'photo': photo_data },
+            format = 'multipart',
             )
